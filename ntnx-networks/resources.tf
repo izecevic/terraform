@@ -15,10 +15,9 @@ locals {
 
 # resource network
 resource "nutanix_subnet" "networks" {
-  count        = length(var.networks)
+  for_each = var.networks
   cluster_uuid = local.cluster
   subnet_type  = "VLAN"
-  name         = lookup(var.networks[count.index], "name")
-  vlan_id      = lookup(var.networks[count.index], "id")
-  vswitch_name = lookup(var.networks[count.index], "bridge")
+  name         = each.key
+  vlan_id      = each.value
 }

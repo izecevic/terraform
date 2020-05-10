@@ -4,7 +4,7 @@ variable "prismUser" {
 }
 
 variable "prismSecret" {
-  default = ""
+  default = "4u/Nutanix!"
 }
 
 variable "prismEndpoint" {
@@ -18,18 +18,9 @@ variable "prismPort" {
 
 # region network
 variable "networks" {
-  type = list
-  default = [
-    {
-      name   = "VLAN_PROD"
-      id     = "100"
-      bridge = "br0"
-    },
-    {
-      name   = "VLAN_DEV"
-      id     = "200"
-      bridge = "br1"
-    }
-  ]
+  type = map
+  default = {
+    "NET_TEST" = "400"
+  }
 }
 # endregion
