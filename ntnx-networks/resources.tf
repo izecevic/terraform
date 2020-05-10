@@ -1,3 +1,4 @@
+# provider and authentication
 provider "nutanix" {
   username = var.prismUser
   password = var.prismSecret
@@ -6,6 +7,7 @@ provider "nutanix" {
   port     = var.prismPort
 }
 
+# get PE cluster uuid and assigned to local variable
 data "nutanix_clusters" "clusters" {}
 locals {
   cluster = data.nutanix_clusters.clusters.entities[0].metadata.uuid

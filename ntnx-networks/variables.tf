@@ -32,4 +32,4 @@ variable "networks" {
     }
   ]
 }
-#end region
+# endregion
