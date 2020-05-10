@@ -4,11 +4,11 @@ variable "prismUser" {
 }
 
 variable "prismSecret" {
-  default = "4u/Nutanix!"
+  default = "enter admin password"
 }
 
 variable "prismEndpoint" {
-  default = "192.168.10.32"
+  default = "enter PE IP"
 }
 
 variable "prismPort" {
@@ -21,6 +21,8 @@ variable "networks" {
   type = map
   default = {
     "NET_TEST" = "400"
+    "NET_PROD" = "300"
+    "NET_DEV" = "200"
   }
 }
 # endregion
