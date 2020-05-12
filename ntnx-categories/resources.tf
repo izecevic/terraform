@@ -1,3 +1,6 @@
+# create categories
+# variables.tf needs to be filled
+
 # provider and authentication
 provider "nutanix" {
   username = var.prismUser
