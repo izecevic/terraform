@@ -16,7 +16,7 @@ variable "prismPort" {
 }
 # endregion
 
-# region network
+# region security_isolation
 variable "security_isolation" {
     type = object({
     name = string

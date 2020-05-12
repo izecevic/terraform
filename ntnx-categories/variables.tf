@@ -16,7 +16,7 @@ variable "prismPort" {
 }
 # endregion
 
-# region network
+# region category
 variable "category" {
   type = list(string)
   default = ["Finance-App","HR-APP","Training-APP"]
