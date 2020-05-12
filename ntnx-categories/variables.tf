@@ -4,7 +4,7 @@ variable "prismUser" {
 }
 
 variable "prismSecret" {
-  default = "Samedi18!"
+  default = "password"
 }
 
 variable "prismEndpoint" {
