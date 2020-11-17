@@ -1,1 +1,1 @@
-# terraform for Nutanix
+# terraform for Nutanix & vSphere
