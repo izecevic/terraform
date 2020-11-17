@@ -15,7 +15,7 @@ data "vsphere_datacenter" "datacenter" {
 
 data "vsphere_host" "host" {
   name           = var.vsphere_esxi_name
-  datacenter_id  = data.vsphere_datacenter.datacenter_esgi.id
+  datacenter_id  = data.vsphere_datacenter.datacenter.id
 }
 
 # Resource
