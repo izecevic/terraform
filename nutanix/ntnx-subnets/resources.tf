@@ -1,13 +1,14 @@
 # provider and authentication
 provider "nutanix" {
-  username = var.prismUser
-  password = var.prismSecret
-  endpoint = var.prismEndpoint
+  username = var.prism_user
+  password = var.prism_password
+  endpoint = var.prism_server
+  port     = var.prism_port
   insecure = true
-  port     = var.prismPort
+
 }
 
-# get PE cluster uuid and assigned to local variable
+# Get PE cluster uuid and assigned to local variable
 data "nutanix_clusters" "clusters" {}
 locals {
   cluster = data.nutanix_clusters.clusters.entities[0].metadata.uuid
@@ -15,9 +16,9 @@ locals {
 
 # resource network
 resource "nutanix_subnet" "networks" {
-  for_each = var.networks
+  for_each = var.prism_subnets
   cluster_uuid = local.cluster
-  subnet_type  = "VLAN"
+  subnet_type  = var.prism_subnet_type
   name         = each.key
   vlan_id      = each.value
 }
