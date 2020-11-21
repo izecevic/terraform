@@ -22,7 +22,7 @@ variable "networks" {
   default = {
     "NET_TEST" = "400"
     "NET_PROD" = "300"
-    "NET_DEV" = "200"
+    "NET_DEV" = "500"
   }
 }
 # endregion
