@@ -1,61 +1,36 @@
 # region authentication
-    variable "prismUser" {
-        default = "admin"
-    }
-    variable "prismSecret" {
-        default = "YOUR_PASSWORD"
-    }
-    variable "prismEndpoint" {
-        default = "192.168.10.34"
-    }
-    variable "prismPort" {
-        default = "9440"
-        }
+variable "prism_user" {}
+variable "prism_password" {}
+variable "prism_server" {}
+variable "prism_port" {}
 # endregion
 
 #region cluster information
-    variable nutanix_image {
-        default = "CentOS_7_Cloud"
-    }
-    variable nutanix_network {}
+variable "nutanix_image" {}
+variable "nutanix_network" {}
+variable "nutanix_image_source_reference" {}
 #endregion
 
-#region vm configuration
-    variable "vm-config" {
-        type = object({
-            count = string
-            cpu = string
-            ram  = string
-            datadiskSizeMib = number    
-        })
-        default = {
-            count = "1"
-            cpu = "1"
-            ram = "2048"
-            datadiskSizeMib = 51200
-        }
-    }
+#region vm config
+variable "vm_count" {}
+variable "vm_name" {}
+variable "vm_num_vcpus_per_socket" {}
+variable "vm_cpu" {}
+variable "vm_ram" {}
+variable "vm_disk_type" {}
+variable "vm_disk_devide_index" {}
+variable "vm_disk_adapter_type" {}
+variable "vm_disk_size_gb" {}
 #endregion
 
 #region vm customization
-    variable "vm-customization" {
-    type = object({
-        vmname = string
-        ips = list(string)
-        domain  = string
-        subnetmMask = string
-        gateway = string
-        dns = list(string)
-        publicKey = string
-    })
-    default = {
-        vmname = "myvm"
-        ips = [""]
-        domain  = ""
-        subnetmMask = ""
-        gateway = ""
-        dns = [""]
-        publicKey = ""
-    }
-}
+variable "vm_user" {}
+variable "vm_ipv4_add_base" {}
+variable "vm_ipv4_add_last_octet" {}
+variable "vm_ipv4_netmask" {}
+variable "vm_ipv4_gateway" {}
+variable "vm_domain" {}
+variable "vm_dns1" {}
+variable "vm_dns2" {}
+variable "vm_public_key" {}
 #endregion

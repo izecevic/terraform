@@ -2,30 +2,32 @@
 cloud_config_modules: 
   - resolv_conf
   - runcmd
-hostname: ${name}
-fqdn: ${name}.${domain}
+
+hostname: ${vm_name}
+fqdn: ${vm_name}.${vm_domain}
+
 users:
-  - name: centos
+  - name: ${vm_user}
     ssh-authorized-keys:
-      - ${publicKey}
+      - ${vm_public_key}
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
+  
 write_files:
   - path: /etc/sysconfig/network-scripts/ifcfg-eth0
     content: |
-      IPADDR="${ip}"
-      NETMASK="${subnetMask}"
-      GATEWAY="${gw}"
-      BOOTPROTO=none
+      IPADDR="${vm_ip}"
+      NETMASK="${vm_netmask}"
+      GATEWAY="${vm_gateway}"
+      BOOTPROTO=static
       ONBOOT=yes
       DEVICE=eth0
 runcmd:
   - [ifdown, eth0]
   - [ifup, eth0]
-  - [eject]
+
 manage_resolv_conf: true
 resolv_conf:
-  nameservers: ['${dns1}', '${dns2}']
-  domain: ${domain}
-  options:
-    rotate: true
-    timeout: 1
+  nameservers: ['${vm_dns1}', '${vm_dns2}']
+  searchdomains:
+    - ${vm_domain}
+  domain: ${vm_domain}
