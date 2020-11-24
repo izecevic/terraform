@@ -32,3 +32,4 @@ vm_dns1 = "10.68.97.4"
 vm_dns2 = "10.68.97.5"
 vm_user = "centos"
 vm_public_key = "centos ssh_public_key XXXXXXXXX"
+#endregion
