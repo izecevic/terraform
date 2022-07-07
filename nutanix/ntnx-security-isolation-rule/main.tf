@@ -10,12 +10,6 @@ provider "nutanix" {
   insecure = true
 }
 
-# get PE cluster uuid and assigned to local variable
-data "nutanix_clusters" "clusters" {}
-locals {
-  cluster = data.nutanix_clusters.clusters.entities[0].metadata.uuid
-}
-
 # retreive the nutanix security isolation rule
 data "nutanix_network_security_rule" "isolation_rule" {
   network_security_rule_id = nutanix_network_security_rule.isolation.id
