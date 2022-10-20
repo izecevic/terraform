@@ -10,9 +10,9 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "eu-west-3"
-  access_key = "ASIAWRBYLUVQDG4ZSS3D"
-  secret_key = "bSY5Llk8fWEN7iZuiMruSL3YTqYqsphOiRmSh4ON"
-  token = "IQoJb3JpZ2luX2VjEIX//////////wEaCXVzLXdlc3QtMiJHMEUCIQDHDLwIirnehANvBlFe6BzzvZTwfJH/cFe2am3qwwj1dgIgVZI1a0auoUMdVncLhHW4//a1AZOcjGO6xHOs1IvxjM8qrAMIXhADGgw0NDg5NDIyODYxNzYiDOG074y/e7v4zYRxciqJAynglMm71DmPLZBa3vicUFqjyHL8XSR6tZPkRsWX6X9+ZAgJDHlY7Hk6QK837NcFQykJMXRE2nSqWtm9mP5fKg/PPexo9+PnBm54pF1hweZbE55Up359Q3tjUxaN0jqbThr4t3z0VWZ+QlPQQBd9wssmiMR7DA3PLKVC3PH45j4pjJRhZEfpqw/QtFkMhImpmu20wnYAUPZcKF0pQ5304ypJ+mAHUy3tBnhTo7YqIsOx/jPKjfqbFci2d16vWDXdCxQXcCSWQ7uLDm0SRD3AjqUQ14xIdWSvEBAG08WEXNxPZ3u8ISoKf4LHNhBIF96Le+saN/oIalcsjdCe2GFz2tVqNepCGV3CsRqRqbC7/ksytpvYDpNvvXeaEMFyLRUfUf9CkR2TA/WpEkF7+nnlYsLHLTCJ20xqxI/M7psPVrFta1RV7OckoHor6Ki/s/U5xJAmPPT3IQaxnJjeYkPzknADIsQGKqLqebyXg5JEJP8Hdrc4Lv+0mSmgbMfTpxqHU1QBrOyBGsyBmDC3jMWaBjqmASfZzQzzyIbmH7srzFdRMtphB3phxf/r9csJzT3s1/uC6vTjrlraE2p3IrqH4zfjboUcMAUhq5ID5ybGX72F4oWoo2+untd85prB1NRfB85wjOUukNxdJQLNS9+TBLeF5IwRGx+5paWMwny5MP7ZbTO8N07GgPUe/kyDcoHqey03ELJLeegGNjoM5CHng52P5G//svM4LeYxA1NQmBW72GqULvvb/E8="
+  access_key = "XXX"
+  secret_key = "XXX"
+  token = "XXX"
 }
 
 # Create a VPC
