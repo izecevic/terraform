@@ -12,7 +12,7 @@ provider "nutanix" {
 resource "nutanix_subnet" "networks" {
   for_each = var.prism_subnets
   cluster_uuid = local.cluster
-  subnet_type  = "VLAN"
-  name         = "my-network"
-  vlan_id      = 10
+  subnet_type  = var.prism_subnet_type
+  name         = var.prism_subnet_name
+  vlan_id      = var.prism_subnet_id
 }
