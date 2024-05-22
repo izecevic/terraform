@@ -8,17 +8,11 @@ provider "nutanix" {
 
 }
 
-# Get PE cluster uuid and assigned to local variable
-data "nutanix_clusters" "clusters" {}
-locals {
-  cluster = data.nutanix_clusters.clusters.entities[0].metadata.uuid
-}
-
 # resource network
 resource "nutanix_subnet" "networks" {
   for_each = var.prism_subnets
   cluster_uuid = local.cluster
-  subnet_type  = var.prism_subnet_type
-  name         = each.key
-  vlan_id      = each.value
+  subnet_type  = "VLAN"
+  name         = "my-network"
+  vlan_id      = 10
 }
